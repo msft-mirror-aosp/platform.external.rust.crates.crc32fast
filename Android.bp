@@ -37,10 +37,47 @@ license {
     ],
 }
 
+rust_defaults {
+    name: "crc32fast_test_defaults",
+    crate_name: "crc32fast",
+    srcs: ["src/lib.rs"],
+    cargo_env_compat: true,
+    cargo_pkg_version: "1.2.1",
+    test_suites: ["general-tests"],
+    auto_gen_config: true,
+    edition: "2015",
+    features: [
+        "default",
+        "std",
+    ],
+    cfgs: ["crc32fast_stdarchx86"],
+    rustlibs: [
+        "libbencher",
+        "libcfg_if",
+        "libquickcheck",
+        "librand",
+    ],
+}
+
+rust_test_host {
+    name: "crc32fast_host_test_src_lib",
+    defaults: ["crc32fast_test_defaults"],
+    test_options: {
+        unit_test: true,
+    },
+}
+
+rust_test {
+    name: "crc32fast_device_test_src_lib",
+    defaults: ["crc32fast_test_defaults"],
+}
+
 rust_library {
     name: "libcrc32fast",
     host_supported: true,
     crate_name: "crc32fast",
+    cargo_env_compat: true,
+    cargo_pkg_version: "1.2.1",
     srcs: ["src/lib.rs"],
     edition: "2015",
     features: [
@@ -56,6 +93,3 @@ rust_library {
         "com.android.virt",
     ],
 }
-
-// dependent_library ["feature_list"]
-//   cfg-if-1.0.0
