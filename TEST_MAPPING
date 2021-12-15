@@ -2,13 +2,42 @@
 {
   "presubmit": [
     {
-      "name": "crc32fast_device_test_src_lib"
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "crc32fast_test_src_lib"
     },
     {
       "name": "libapkverify.integration_test"
     },
     {
       "name": "libapkverify.test"
+    },
+    {
+      "name": "microdroid_manager_test"
+    },
+    {
+      "name": "virtualizationservice_device_test"
+    }
+  ],
+  "presubmit-rust": [
+    {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "crc32fast_test_src_lib"
+    },
+    {
+      "name": "libapkverify.integration_test"
+    },
+    {
+      "name": "libapkverify.test"
+    },
+    {
+      "name": "microdroid_manager_test"
+    },
+    {
+      "name": "virtualizationservice_device_test"
     }
   ]
 }
